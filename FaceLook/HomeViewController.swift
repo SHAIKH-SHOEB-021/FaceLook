@@ -36,7 +36,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeTableCell.firstNameTXT.text = rows.first_name
         homeTableCell.lastNameTXT.text = rows.last_name
         homeTableCell.emailTXT.text = rows.email
-        //homeTableCell.homeImageCell.image = loadForm(url: rows.avatar)
         
         return homeTableCell
     }
@@ -50,11 +49,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 }
 //Image Load Function Here
-extension UIImageView {
-    func loadForm(url : URL){
+class CustomImageView : UIImageView{
+    func loadImage(url : URL){
         let task = URLSession.shared.dataTask(with: url){ data, response, error in
-            guard let data = data, let imageView = UIImage(data: data) else{
-                print("Could not load image from url \(url)")
+            guard let data = data, let imageView = UIImage(data: data) else {
+                print("Error")
                 return
             }
             DispatchQueue.main.async {
