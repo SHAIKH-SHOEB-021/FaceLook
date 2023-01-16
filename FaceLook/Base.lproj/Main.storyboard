@@ -97,6 +97,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="homeSearchBar" destination="a6B-38-tt6" id="b0M-yb-fqU"/>
                         <outlet property="homeTableView" destination="Xht-Ky-PSs" id="kPE-lI-MnS"/>
                     </connections>
                 </viewController>

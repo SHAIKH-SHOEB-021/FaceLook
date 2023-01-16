@@ -7,10 +7,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeGetApiRequestDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, HomeGetApiRequestDelegate {
     
     @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var homeSearchBar: UISearchBar!
     var homeDataModel : [HomeApiModel]!
+    var filterData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func didReceivedError() {
         print("Error")
     }
+    
 }
 //Image Load Function Here
 class CustomImageView : UIImageView{
